@@ -3,9 +3,15 @@
 
 <suite name="Smoke" thread-count="2">
 
-    <test name="Login Page Test">
+<!--    <test name="Login Page Test">-->
+<!--        <classes>-->
+<!--            <class name="org.tms.tests.LoginPageTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Projects Page Test">
         <classes>
-            <class name="org.tms.tests.LoginPageTest"></class>
+            <class name="org.tms.tests.ProjectsPageTest"></class>
         </classes>
     </test>
 </suite>
