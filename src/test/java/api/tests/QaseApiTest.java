@@ -12,7 +12,7 @@ import static java.net.HttpURLConnection.HTTP_OK;
 
 public class QaseApiTest {
 
-    @Test(priority = 0)
+    @Test(priority = 1)
     public void createNewProjectTest(){
 
         String title = "title";
@@ -33,7 +33,7 @@ public class QaseApiTest {
         Assert.assertEquals(resultCode, actualCode);
     }
 
-    @Test (priority = 1, description = "run after createNewProjectTest")
+    @Test (priority = 2, description = "run after createNewProjectTest")
     public void deleteProjectTest(){
 
         String projectCode = "/CODE";

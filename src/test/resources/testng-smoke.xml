@@ -9,9 +9,27 @@
 <!--        </classes>-->
 <!--    </test>-->
 
-    <test name="Projects Page Test">
+<!--    <test name="Projects Page Test">-->
+<!--        <classes>-->
+<!--            <class name="org.tms.tests.ProjectsPageTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="Created Project Page Test">-->
+<!--        <classes>-->
+<!--            <class name="org.tms.tests.CreatedProjectPageTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="Plan Page Test">-->
+<!--        <classes>-->
+<!--            <class name="org.tms.tests.PlansPageTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Runs Page Test">
         <classes>
-            <class name="org.tms.tests.ProjectsPageTest"></class>
+            <class name="org.tms.tests.RunsPageTest"></class>
         </classes>
     </test>
 </suite>

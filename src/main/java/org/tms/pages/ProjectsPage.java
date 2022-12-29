@@ -2,18 +2,9 @@ package org.tms.pages;
 
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
-import okio.Timeout;
-import org.aspectj.apache.bcel.ExceptionConstants;
-import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-import java.util.TimeZone;
-import java.util.concurrent.TimeUnit;
 
 @Log4j2
 public class ProjectsPage extends BasePage{
@@ -30,8 +21,18 @@ public class ProjectsPage extends BasePage{
     @FindBy(xpath = "//span[contains(text(),'Create project')]")
     private WebElement createProjectButton;
 
+    @FindBy(xpath = "//div[@class = 'add-filter-outer']")
+    private WebElement addFilterButton;
+
+    @FindBy(xpath = "//button[contains(text(), 'Member')]")
+    private WebElement filterValue;
+
+    @FindBy(xpath = "//span[contains(text(), 'Member')]")
+    private WebElement addedFilterValue;
 
     protected String projectName = "Project Name";
+
+    WebDriverWait wait = new WebDriverWait(driver, 10);
 
     @Step("Get Projects Page Name")
     public String getProjectNamePage(){
@@ -58,4 +59,25 @@ public class ProjectsPage extends BasePage{
         log.info("Click button Create Project");
         createProjectButton.click();
     }
+
+    @Step("Click add filter button")
+    public ProjectsPage clickAddFilterButton(){
+        log.info("Click add filter button");
+        addFilterButton.click();
+        return this;
+    }
+
+    @Step("Choose filter value")
+    public ProjectsPage chooseFilterValue(){
+        log.info("Choose filter value");
+        filterValue.click();
+        return this;
+    }
+
+    @Step("Get Name Added Filter")
+    public String getNameAddedFilter(){
+        log.info("Get Name Added Filter");
+        return addedFilterValue.getText();
+    }
+
 }
