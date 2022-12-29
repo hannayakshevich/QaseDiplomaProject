@@ -3,29 +3,29 @@
 
 <suite name="Smoke" thread-count="2">
 
-<!--    <test name="Login Page Test">-->
-<!--        <classes>-->
-<!--            <class name="org.tms.tests.LoginPageTest"></class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Login Page Test">
+        <classes>
+            <class name="org.tms.tests.LoginPageTest"></class>
+        </classes>
+    </test>
 
-<!--    <test name="Projects Page Test">-->
-<!--        <classes>-->
-<!--            <class name="org.tms.tests.ProjectsPageTest"></class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Projects Page Test">
+        <classes>
+            <class name="org.tms.tests.ProjectsPageTest"></class>
+        </classes>
+    </test>
 
-<!--    <test name="Created Project Page Test">-->
-<!--        <classes>-->
-<!--            <class name="org.tms.tests.CreatedProjectPageTest"></class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Created Project Page Test">
+        <classes>
+            <class name="org.tms.tests.CreatedProjectPageTest"></class>
+        </classes>
+    </test>
 
-<!--    <test name="Plan Page Test">-->
-<!--        <classes>-->
-<!--            <class name="org.tms.tests.PlansPageTest"></class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Plan Page Test">
+        <classes>
+            <class name="org.tms.tests.PlansPageTest"></class>
+        </classes>
+    </test>
 
     <test name="Runs Page Test">
         <classes>
