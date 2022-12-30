@@ -8,15 +8,14 @@ import org.tms.services.LoginPageService;
 
 public class CreatedProjectPageTest extends BaseTest{
 
-
     @Test
     public void createNewSuite(){
 
         CreatedProjectPageService createdProjectService = new CreatedProjectPageService();
         LoginPageService loginPageService = new LoginPageService();
         User user = new User();
-        loginPageService.login(user);
 
+        loginPageService.login(user);
         String actual = createdProjectService.createNewSuite();
         Assert.assertEquals(actual, "newSuite");
     }
@@ -27,11 +26,10 @@ public class CreatedProjectPageTest extends BaseTest{
         CreatedProjectPageService createdProjectService = new CreatedProjectPageService();
         LoginPageService loginPageService = new LoginPageService();
         User user = new User();
-        loginPageService.login(user);
 
+        loginPageService.login(user);
         String actual = createdProjectService.createNewCase();
         Assert.assertEquals(actual, "newCase");
     }
-
 
 }

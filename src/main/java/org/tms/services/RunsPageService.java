@@ -6,28 +6,30 @@ public class RunsPageService {
 
     protected RunsPage plansPage = new RunsPage();
 
-    public String createNewRun(){
-        return plansPage.openProject()
-                .clickTestsRunButton()
-                .clickCreateRunButton()
-                .clickAddRunCasesButton()
-                .clickCasesRunCheckBox()
-                .clickDoneRunButton()
-                .clickSaveRunButton()
-                .verifyCreatedRun();
-    }
+//    public String createNewRun(){
+//        return plansPage.openProject()
+//                .clickTestsRunLink()
+//                .clickCreateRunButton()
+//                .clickAddRunCasesButton()
+//                .clickCasesRunCheckBox()
+//                .clickDoneRunButton()
+//                .clickSaveRunButton()
+//                .verifyCreatedRun();
+//    }
 
     public String errorRunCreation(){
+
         return plansPage.openProject()
-                .clickTestsRunButton()
+                .clickTestsRunLink()
                 .clickCreateRunButton()
                 .clickSaveRunButton()
-                .verifyTextErrorRunCreation();
+                .getTextErrorRunCreation();
     }
 
     public String verifySharedReportWindowTitle(){
+
         return plansPage.openProject()
-                .clickTestsRunButton()
+                .clickTestsRunLink()
                 .openCreatedRun()
                 .clickSharedReportButton()
                 .getSharedReportTitle();

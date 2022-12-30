@@ -11,10 +11,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class PlansPage extends BasePage{
 
     @FindBy(xpath = "//a[contains(text(), 'AQA17-onl')]")
-    private WebElement openProject;
+    private WebElement linkCreatedProject;
 
     @FindBy(xpath = "//span[contains(text(), 'Test Plans')]")
-    private WebElement testsPlanButton;
+    private WebElement linkTestsPlan;
 
     @FindBy(xpath = "//a[@id = 'createButton']")
     private WebElement createPlanButton;
@@ -35,7 +35,7 @@ public class PlansPage extends BasePage{
     private WebElement savePlanButton;
 
     @FindBy(xpath = "//a[contains(text(), 'newPlan')]")
-    private WebElement createdPlan;
+    private WebElement titleNewPlan;
 
     @FindBy(xpath = "//div[contains(text(), 'The cases field is required.')]")
     private WebElement errorTextPlanCreation;
@@ -47,22 +47,22 @@ public class PlansPage extends BasePage{
     @Step("Open project")
     public PlansPage openProject(){
         log.info("Open project");
-        wait.until(ExpectedConditions.visibilityOf(openProject));
-        openProject.click();
+        wait.until(ExpectedConditions.visibilityOf(linkCreatedProject));
+        linkCreatedProject.click();
         return this;
     }
 
-    @Step("Click to button tests plan button")
-    public PlansPage clickTestsPlanButton(){
-        log.info("Click to button tests plan button");
-        wait.until(ExpectedConditions.visibilityOf(testsPlanButton));
-        testsPlanButton.click();
+    @Step("Click to tests plan link")
+    public PlansPage clickTestsPlanLink(){
+        log.info("Click to tests plan link");
+        wait.until(ExpectedConditions.visibilityOf(linkTestsPlan));
+        linkTestsPlan.click();
         return this;
     }
 
-    @Step("Click to button create plan button")
+    @Step("Click to create plan button")
     public PlansPage clickCreatePlanButton(){
-        log.info("Click to button create plan button");
+        log.info("Click to create plan button");
         wait.until(ExpectedConditions.visibilityOf(createPlanButton));
         createPlanButton.click();
         return this;
@@ -76,9 +76,9 @@ public class PlansPage extends BasePage{
         return this;
     }
 
-    @Step("Click to button add cases button")
+    @Step("Click to add cases button")
     public PlansPage clickAddCasesButton(){
-        log.info("Click to button add cases button");
+        log.info("Click to add cases button");
         wait.until(ExpectedConditions.visibilityOf(addCasesButton));
         addCasesButton.click();
         return this;
@@ -108,16 +108,16 @@ public class PlansPage extends BasePage{
         return this;
     }
 
-    @Step("Verify created plan")
-    public String  verifyCreatedPlan(){
-        log.info("Verify created plan");
-        wait.until(ExpectedConditions.visibilityOf(createdPlan));
-        return createdPlan.getText();
+    @Step("Get title created plan")
+    public String getTitleCreatedPlan(){
+        log.info("Get title created plan");
+        wait.until(ExpectedConditions.visibilityOf(titleNewPlan));
+        return titleNewPlan.getText();
     }
 
-    @Step("Verify text error of plan creation")
-    public String  verifyTextErrorPlanCreation(){
-        log.info("Verify text error of plan creation");
+    @Step("Get text error of plan creation")
+    public String getTextErrorPlanCreation(){
+        log.info("Get text error of plan creation");
         wait.until(ExpectedConditions.visibilityOf(errorTextPlanCreation));
         return errorTextPlanCreation.getText();
     }

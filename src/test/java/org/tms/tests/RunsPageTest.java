@@ -8,28 +8,27 @@ import org.tms.services.RunsPageService;
 
 public class RunsPageTest extends BaseTest{
 
+//    @Test
+//    public void successRunCreationTest(){
+//
+//        RunsPageService runsPageService = new RunsPageService();
+//        LoginPageService loginPageService = new LoginPageService();
+//        User user = new User();
+//        loginPageService.login(user);
+//
+//        String actualTitleCreatedRun = runsPageService.createNewRun();
+//        String expectedTitleCreatedRun = "Test run 2022/12/29";
+//        Assert.assertEquals(actualTitleCreatedRun, expectedTitleCreatedRun);
+//    }
 
     @Test
-    public void successRunCreationTest(){
+    public void verifyErrorTextRunCreationTest(){
 
         RunsPageService runsPageService = new RunsPageService();
         LoginPageService loginPageService = new LoginPageService();
         User user = new User();
+
         loginPageService.login(user);
-
-        String actualTitleCreatedRun = runsPageService.createNewRun();
-        String expectedTitleCreatedRun = "Test run 2022/12/29";
-        Assert.assertEquals(actualTitleCreatedRun, expectedTitleCreatedRun);
-    }
-
-    @Test
-    public void errorRunCreationTest(){
-
-        RunsPageService runsPageService = new RunsPageService();
-        LoginPageService loginPageService = new LoginPageService();
-        User user = new User();
-        loginPageService.login(user);
-
         String actualTextErrorRunCreation = runsPageService.errorRunCreation();
         String expectedTextErrorRunCreation = "The cases field is required when " +
                 "include all cases is not present.";
@@ -42,8 +41,8 @@ public class RunsPageTest extends BaseTest{
         RunsPageService runsPageService = new RunsPageService();
         LoginPageService loginPageService = new LoginPageService();
         User user = new User();
-        loginPageService.login(user);
 
+        loginPageService.login(user);
         String actualTextErrorRunCreation = runsPageService.verifySharedReportWindowTitle();
         String expectedTextErrorRunCreation = "Share report";
         Assert.assertEquals(actualTextErrorRunCreation, expectedTextErrorRunCreation);

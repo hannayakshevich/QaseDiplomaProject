@@ -21,7 +21,7 @@
         </classes>
     </test>
 
-    <test name="Plan Page Test">
+    <test name="Plans Page Test">
         <classes>
             <class name="org.tms.tests.PlansPageTest"></class>
         </classes>

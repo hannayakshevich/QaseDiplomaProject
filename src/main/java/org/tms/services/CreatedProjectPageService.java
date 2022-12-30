@@ -8,17 +8,17 @@ public class CreatedProjectPageService {
 
     public String  createNewSuite(){
         return createdProjectPage.openProject()
-                .clickSuiteButton()
-                .fillSuiteName()
                 .clickCreateSuiteButton()
-                .findCreatedSuite();
+                .fillSuiteName()
+                .clickSaveSuiteButton()
+                .getTitleCreatedSuite();
     }
 
     public String createNewCase(){
         return createdProjectPage.openProject()
-                .clickCaseButton()
+                .clickCreateCaseButton()
                 .fillTitleCaseField()
-                .saveNewCase()
-                .findCreatedCase();
+                .saveCase()
+                .getTitleCreatedCase();
     }
 }

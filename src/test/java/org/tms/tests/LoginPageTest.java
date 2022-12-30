@@ -1,17 +1,14 @@
 package org.tms.tests;
 
-import lombok.extern.log4j.Log4j2;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.tms.model.User;
 import org.tms.services.LoginPageService;
 
-@Log4j2
 public class LoginPageTest extends BaseTest{
 
     @Test
-    public void SuccessLoginTest(){
-        log.info("Run Success Login Test");
+    public void LoginTest(){
 
         LoginPageService setLoginPageService = new LoginPageService();
         User user = new User();

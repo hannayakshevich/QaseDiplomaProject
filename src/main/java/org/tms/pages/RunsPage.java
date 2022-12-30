@@ -2,7 +2,6 @@ package org.tms.pages;
 
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,26 +10,24 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 @Log4j2
 public class RunsPage extends BasePage{
+
     @FindBy(xpath = "//a[contains(text(), 'AQA17-onl')]")
-    private WebElement openProject;
+    private WebElement linkCreatedProject;
 
     @FindBy(xpath = "//span[contains(text(), 'Test Runs')]")
-    private WebElement runsPlanButton;
+    private WebElement linkRunsTest;
 
     @FindBy(xpath = "//a[@id = 'start-new-test-run-button']")
-    private WebElement createRunPlanButton;
+    private WebElement createTestRunButton;
 
-    @FindBy(xpath = "//div[@id = 'application-content']")
-    private WebElement scrollElement;
+//    @FindBy(xpath = "//button[@id = 'edit-run-add-cases-button']")
+//    private WebElement addRunCasesButton;
 
-    @FindBy(xpath = "//button[@id = 'edit-run-add-cases-button']")
-    private WebElement addRunCasesButton;
+//    @FindBy(xpath = "//span[@class = 'custom-control-indicator']")
+//    private WebElement chooseRunCaseCheckBox;
 
-    @FindBy(xpath = "//span[@class = 'custom-control-indicator']")
-    private WebElement chooseRunCaseCheckBox;
-
-    @FindBy(xpath = "//span[contains(text(), 'Done')]")
-    private WebElement doneRunButton;
+//    @FindBy(xpath = "//span[contains(text(), 'Done')]")
+//    private WebElement doneRunButton;
 
     @FindBy(xpath = "//button[@id = 'save-run-button']")
     private WebElement saveRunButton;
@@ -56,52 +53,50 @@ public class RunsPage extends BasePage{
     @Step("Open project")
     public RunsPage openProject(){
         log.info("Open project");
-        wait.until(ExpectedConditions.visibilityOf(openProject));
-        openProject.click();
+        wait.until(ExpectedConditions.visibilityOf(linkCreatedProject));
+        linkCreatedProject.click();
         return this;
     }
 
-    @Step("Click to button tests runs button")
-    public RunsPage clickTestsRunButton(){
-        log.info("Click to button tests runs button");
-        wait.until(ExpectedConditions.visibilityOf(runsPlanButton));
-        runsPlanButton.click();
+    @Step("Click to tests runs link")
+    public RunsPage clickTestsRunLink(){
+        log.info("Click to tests runs link");
+        wait.until(ExpectedConditions.visibilityOf(linkRunsTest));
+        linkRunsTest.click();
         return this;
     }
 
-    @Step("Click to button create run button")
+    @Step("Click to create run button")
     public RunsPage clickCreateRunButton(){
-        log.info("Click to button create run button");
-        wait.until(ExpectedConditions.visibilityOf(createRunPlanButton));
-        createRunPlanButton.click();
+        log.info("Click to create run button");
+        wait.until(ExpectedConditions.visibilityOf(createTestRunButton));
+        createTestRunButton.click();
         return this;
     }
 
-    @Step("Click to button add cases button")
-    public RunsPage clickAddRunCasesButton(){
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js . executeScript ( "window.scrollBy(0,document.body.scrollHeight)" );
-        log.info("Click to button add cases button");
-        wait.until(ExpectedConditions.visibilityOf(addRunCasesButton));
-        addRunCasesButton.click();
-        return this;
-    }
+//    @Step("Click to button add cases button")
+//    public RunsPage clickAddRunCasesButton(){
+//        log.info("Click to button add cases button");
+//        wait.until(ExpectedConditions.elementToBeClickable(addRunCasesButton));
+//        addRunCasesButton.click();
+//        return this;
+//    }
 
-    @Step("Choose case checkbox")
-    public RunsPage clickCasesRunCheckBox(){
-        log.info("Choose case checkbox");
-        wait.until(ExpectedConditions.visibilityOf(chooseRunCaseCheckBox));
-        chooseRunCaseCheckBox.click();
-        return this;
-    }
+//    @Step("Choose case checkbox")
+//    public RunsPage clickCasesRunCheckBox(){
+//        log.info("Choose case checkbox");
+//        wait.until(ExpectedConditions.visibilityOf(chooseRunCaseCheckBox));
+//        chooseRunCaseCheckBox.click();
+//        return this;
+//    }
 
-    @Step("Click button Done")
-    public RunsPage clickDoneRunButton(){
-        log.info("Click button Done");
-        wait.until(ExpectedConditions.visibilityOf(doneRunButton));
-        doneRunButton.click();
-        return this;
-    }
+//    @Step("Click button Done")
+//    public RunsPage clickDoneRunButton(){
+//        log.info("Click button Done");
+//        wait.until(ExpectedConditions.visibilityOf(doneRunButton));
+//        doneRunButton.click();
+//        return this;
+//    }
 
     @Step("Click save run button")
     public RunsPage clickSaveRunButton(){
@@ -111,16 +106,16 @@ public class RunsPage extends BasePage{
         return this;
     }
 
-    @Step("Verify created run")
-    public String  verifyCreatedRun(){
-        log.info("Verify created run");
+    @Step("Get name created run")
+    public String getNameCreatedRun(){
+        log.info("Get name created run");
         wait.until(ExpectedConditions.visibilityOf(createdRun));
         return createdRun.getText();
     }
 
-    @Step("Verify text error of run creation")
-    public String  verifyTextErrorRunCreation(){
-        log.info("Verify text error of run creation");
+    @Step("Get text error of run creation")
+    public String getTextErrorRunCreation(){
+        log.info("Get text error of run creation");
         wait.until(ExpectedConditions.visibilityOf(errorTextRunCreation));
         return errorTextRunCreation.getText();
     }

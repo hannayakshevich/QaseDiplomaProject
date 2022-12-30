@@ -7,23 +7,25 @@ public class PlansPageService {
     protected PlansPage plansPage = new PlansPage();
 
     public String createNewPlan(){
+
         return plansPage.openProject()
-                .clickTestsPlanButton()
+                .clickTestsPlanLink()
                 .clickCreatePlanButton()
                 .fillTitlePlanField()
                 .clickAddCasesButton()
                 .clickCasesCheckBox()
                 .clickDoneButton()
                 .clickSavePlanButton()
-                .verifyCreatedPlan();
+                .getTitleCreatedPlan();
     }
 
     public String errorPlanCreation(){
+
         return plansPage.openProject()
-                .clickTestsPlanButton()
+                .clickTestsPlanLink()
                 .clickCreatePlanButton()
                 .fillTitlePlanField()
                 .clickSavePlanButton()
-                .verifyTextErrorPlanCreation();
+                .getTextErrorPlanCreation();
     }
 }

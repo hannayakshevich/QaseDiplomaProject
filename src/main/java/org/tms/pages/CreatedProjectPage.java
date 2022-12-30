@@ -14,22 +14,22 @@ public class CreatedProjectPage extends BasePage{
     private WebElement titleCreatedProjectPage;
 
     @FindBy(xpath = "//a[contains(text(), 'AQA17-onl')]")
-    private WebElement openProject;
+    private WebElement linkCreatedProject;
 
     @FindBy(xpath = "//a[@id= 'create-suite-button']")
-    private WebElement suiteButton;
-
-    @FindBy(xpath = "//input[@id= 'name']")
-    private WebElement fillSuiteName;
-
-    @FindBy(xpath = "//button[@type = 'submit']/span[contains(text(), 'Create')]")
     private WebElement createSuiteButton;
 
+    @FindBy(xpath = "//input[@id= 'name']")
+    private WebElement nameSuiteField;
+
+    @FindBy(xpath = "//button[@type = 'submit']/span[contains(text(), 'Create')]")
+    private WebElement saveSuiteButton;
+
     @FindBy(xpath = "//a[@title = 'newSuite']")
-    private WebElement findCreatedSuite;
+    private WebElement titleNewSuite;
 
     @FindBy(xpath = "//a[@id = 'create-case-button']")
-    private WebElement caseButton;
+    private WebElement createCaseButton;
 
     @FindBy(xpath = "//input[@id = 'title']")
     private WebElement titleCaseField;
@@ -38,61 +38,62 @@ public class CreatedProjectPage extends BasePage{
     private WebElement saveCaseButton;
 
     @FindBy(xpath = "//div[contains(text(), 'newCase')]")
-    private WebElement createdCase;
+    private WebElement titleNewCase;
 
     WebDriverWait wait = new WebDriverWait(driver, 10);
 
     protected String suiteName = "newSuite";
-    protected String titleCaseName= "newCase";
+    protected String caseName = "newCase";
 
     @Step("Get Created Project Page Name")
     public String getCreatedProjectNamePage(){
-        wait.until(ExpectedConditions.titleIs("PN | Repository | Qase"));
         log.info("Get Created Project Page Name");
+        wait.until(ExpectedConditions.titleIs("PN | Repository | Qase"));
         return titleCreatedProjectPage.getText();
     }
 
     @Step("Open project")
     public CreatedProjectPage openProject(){
         log.info("Open project");
-        wait.until(ExpectedConditions.visibilityOf(openProject));
-        openProject.click();
+        wait.until(ExpectedConditions.visibilityOf(linkCreatedProject));
+        linkCreatedProject.click();
         return this;
     }
 
     @Step("Click Suite button")
-    public CreatedProjectPage clickSuiteButton(){
+    public CreatedProjectPage clickCreateSuiteButton(){
         log.info("Click Suite button");
-        wait.until(ExpectedConditions.visibilityOf(suiteButton));
-        suiteButton.click();
+        wait.until(ExpectedConditions.visibilityOf(createSuiteButton));
+        createSuiteButton.click();
         return this;
     }
 
     @Step("Fill Suite name")
     public CreatedProjectPage fillSuiteName(){
         log.info("Fill Suite name");
-        fillSuiteName.sendKeys(suiteName);
+        nameSuiteField.sendKeys(suiteName);
         return this;
     }
 
-    @Step("Click Create Suite button")
-    public CreatedProjectPage clickCreateSuiteButton(){
-        log.info("Click Create Suite button");
-        createSuiteButton.click();
+    @Step("Click Save Suite button")
+    public CreatedProjectPage clickSaveSuiteButton(){
+        log.info("Click Save Suite button");
+        saveSuiteButton.click();
         return this;
     }
 
-    @Step("Find created suite")
-    public String findCreatedSuite(){
-        wait.until(ExpectedConditions.visibilityOf(findCreatedSuite));
-        return findCreatedSuite.getText();
+    @Step("Get title created suite")
+    public String getTitleCreatedSuite(){
+        log.info("Get title created suite");
+        wait.until(ExpectedConditions.visibilityOf(titleNewSuite));
+        return titleNewSuite.getText();
     }
 
-    @Step("Click Case button")
-    public CreatedProjectPage clickCaseButton(){
-        log.info("Click Case button");
-        wait.until(ExpectedConditions.visibilityOf(caseButton));
-        caseButton.click();
+    @Step("Click create Case button")
+    public CreatedProjectPage clickCreateCaseButton(){
+        log.info("Click create Case button");
+        wait.until(ExpectedConditions.visibilityOf(createCaseButton));
+        createCaseButton.click();
         return this;
     }
 
@@ -100,22 +101,23 @@ public class CreatedProjectPage extends BasePage{
     public CreatedProjectPage fillTitleCaseField(){
         log.info("Fill Title Case Field");
         wait.until(ExpectedConditions.visibilityOf(titleCaseField));
-        titleCaseField.sendKeys(titleCaseName);
+        titleCaseField.sendKeys(caseName);
         return this;
     }
 
-    @Step("Save New Case")
-    public CreatedProjectPage saveNewCase(){
-        log.info("Save New Case");
+    @Step("Save Case")
+    public CreatedProjectPage saveCase(){
+        log.info("Save Case");
         wait.until(ExpectedConditions.visibilityOf(saveCaseButton));
         saveCaseButton.click();
         return this;
     }
 
-    @Step("Find created suite")
-    public String findCreatedCase(){
-        wait.until(ExpectedConditions.visibilityOf(createdCase));
-        return createdCase.getText();
+    @Step("Get title created suite")
+    public String getTitleCreatedCase(){
+        log.info("Get title created suite");
+        wait.until(ExpectedConditions.visibilityOf(titleNewCase));
+        return titleNewCase.getText();
     }
 
 }

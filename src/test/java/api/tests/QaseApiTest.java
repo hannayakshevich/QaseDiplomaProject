@@ -4,11 +4,8 @@ import api.adapters.CaseAdapter;
 import api.adapters.ProjectAdapter;
 import api.models.Case;
 import api.models.Project;
-import io.restassured.response.ResponseBody;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import static java.net.HttpURLConnection.HTTP_OK;
 
 public class QaseApiTest {
 
@@ -46,18 +43,6 @@ public class QaseApiTest {
     }
 
     @Test
-    public void getSpecificCaseTest(){
-
-        String specificCaseCode = "/AQA17/";
-        int specificCaseId = 7;
-
-        int actualCaseId = new CaseAdapter()
-                .getSpecificCase(specificCaseCode, specificCaseId)
-                .body().path("result.id");
-        Assert.assertEquals(actualCaseId, specificCaseId);
-    }
-
-    @Test
     public void createCaseTest(){
 
          String  title = "title";
@@ -76,6 +61,18 @@ public class QaseApiTest {
                  .CreateNewCase(newCase, projectCode)
                  .body().path("status");
          Assert.assertTrue(actualResult);
+    }
+
+    @Test
+    public void getSpecificCaseTest(){
+
+        String specificCaseCode = "/AQA17/";
+        int specificCaseId = 2;
+
+        int actualCaseId = new CaseAdapter()
+                .getSpecificCase(specificCaseCode, specificCaseId)
+                .body().path("result.id");
+        Assert.assertEquals(actualCaseId, specificCaseId);
     }
 
     @Test
