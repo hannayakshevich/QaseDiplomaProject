@@ -5,10 +5,10 @@ import org.tms.pages.ProjectsPage;
 
 public class ProjectPageService{
 
-    protected String projectNameSuccess = "Project Name";
-    protected String projectNameNegative = "P17";
+    private String projectNameSuccess = "Project Name";
+    private String projectNameNegative = "P17";
 
-    protected ProjectsPage projectPage = new ProjectsPage();
+    private ProjectsPage projectPage = new ProjectsPage();
 
     public CreatedProjectPage createNewProject(){
 

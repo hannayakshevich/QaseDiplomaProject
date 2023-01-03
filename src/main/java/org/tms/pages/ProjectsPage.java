@@ -5,7 +5,6 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 @Log4j2
 public class ProjectsPage extends BasePage{
@@ -33,8 +32,6 @@ public class ProjectsPage extends BasePage{
 
     @FindBy(xpath = "//div[contains(text(), '2 characters')]")
     private WebElement errorTextProjectCodeField;
-
-    WebDriverWait wait = new WebDriverWait(driver, 10);
 
     @Step("Get Projects Page Name")
     public String getProjectNamePage(){

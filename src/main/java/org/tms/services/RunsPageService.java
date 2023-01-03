@@ -4,18 +4,7 @@ import org.tms.pages.RunsPage;
 
 public class RunsPageService {
 
-    protected RunsPage plansPage = new RunsPage();
-
-//    public String createNewRun(){
-//        return plansPage.openProject()
-//                .clickTestsRunLink()
-//                .clickCreateRunButton()
-//                .clickAddRunCasesButton()
-//                .clickCasesRunCheckBox()
-//                .clickDoneRunButton()
-//                .clickSaveRunButton()
-//                .verifyCreatedRun();
-//    }
+    private RunsPage plansPage = new RunsPage();
 
     public String errorRunCreation(){
 

@@ -1,4 +1,4 @@
-package org.tms.tests;
+package org.tms.utils;
 
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;

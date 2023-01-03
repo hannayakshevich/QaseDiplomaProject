@@ -1,4 +1,4 @@
-package api.utils;
+package org.tms.api.utils;
 
 public class StringConstant {
 

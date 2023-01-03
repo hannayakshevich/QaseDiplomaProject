@@ -5,7 +5,6 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 @Log4j2
@@ -19,15 +18,6 @@ public class RunsPage extends BasePage{
 
     @FindBy(xpath = "//a[@id = 'start-new-test-run-button']")
     private WebElement createTestRunButton;
-
-//    @FindBy(xpath = "//button[@id = 'edit-run-add-cases-button']")
-//    private WebElement addRunCasesButton;
-
-//    @FindBy(xpath = "//span[@class = 'custom-control-indicator']")
-//    private WebElement chooseRunCaseCheckBox;
-
-//    @FindBy(xpath = "//span[contains(text(), 'Done')]")
-//    private WebElement doneRunButton;
 
     @FindBy(xpath = "//button[@id = 'save-run-button']")
     private WebElement saveRunButton;
@@ -47,8 +37,6 @@ public class RunsPage extends BasePage{
 
     @FindBy(xpath = "//h3[@class = 'W_JRzn']")
     private WebElement titleSharedReportWindow;
-
-    WebDriverWait wait = new WebDriverWait(driver, 10);
 
     @Step("Open project")
     public RunsPage openProject(){
@@ -73,30 +61,6 @@ public class RunsPage extends BasePage{
         createTestRunButton.click();
         return this;
     }
-
-//    @Step("Click to button add cases button")
-//    public RunsPage clickAddRunCasesButton(){
-//        log.info("Click to button add cases button");
-//        wait.until(ExpectedConditions.elementToBeClickable(addRunCasesButton));
-//        addRunCasesButton.click();
-//        return this;
-//    }
-
-//    @Step("Choose case checkbox")
-//    public RunsPage clickCasesRunCheckBox(){
-//        log.info("Choose case checkbox");
-//        wait.until(ExpectedConditions.visibilityOf(chooseRunCaseCheckBox));
-//        chooseRunCaseCheckBox.click();
-//        return this;
-//    }
-
-//    @Step("Click button Done")
-//    public RunsPage clickDoneRunButton(){
-//        log.info("Click button Done");
-//        wait.until(ExpectedConditions.visibilityOf(doneRunButton));
-//        doneRunButton.click();
-//        return this;
-//    }
 
     @Step("Click save run button")
     public RunsPage clickSaveRunButton(){

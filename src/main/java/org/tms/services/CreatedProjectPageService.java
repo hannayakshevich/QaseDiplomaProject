@@ -4,7 +4,7 @@ import org.tms.pages.CreatedProjectPage;
 
 public class CreatedProjectPageService {
 
-    protected CreatedProjectPage createdProjectPage = new CreatedProjectPage();
+    private CreatedProjectPage createdProjectPage = new CreatedProjectPage();
 
     public String  createNewSuite(){
         return createdProjectPage.openProject()

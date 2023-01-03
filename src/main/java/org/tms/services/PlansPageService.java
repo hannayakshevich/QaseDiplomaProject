@@ -4,7 +4,7 @@ import org.tms.pages.PlansPage;
 
 public class PlansPageService {
 
-    protected PlansPage plansPage = new PlansPage();
+    private PlansPage plansPage = new PlansPage();
 
     public String createNewPlan(){
 

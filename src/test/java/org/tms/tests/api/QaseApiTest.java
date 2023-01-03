@@ -1,9 +1,9 @@
-package api.tests;
+package org.tms.tests.api;
 
-import api.adapters.CaseAdapter;
-import api.adapters.ProjectAdapter;
-import api.models.Case;
-import api.models.Project;
+import org.tms.api.adapters.CaseAdapter;
+import org.tms.api.adapters.ProjectAdapter;
+import org.tms.api.models.Case;
+import org.tms.api.models.Project;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -58,7 +58,7 @@ public class QaseApiTest {
                  .severity(severity)
                  .build();
          Boolean actualResult = new CaseAdapter()
-                 .CreateNewCase(newCase, projectCode)
+                 .createNewCase(newCase, projectCode)
                  .body().path("status");
          Assert.assertTrue(actualResult);
     }
@@ -86,7 +86,7 @@ public class QaseApiTest {
                 .title(title)
                 .build();
         Boolean actualResult = new CaseAdapter()
-                .PatchCase(newCase, projectCode, caseId)
+                .patchCase(newCase, projectCode, caseId)
                 .body().path("status");
         Assert.assertTrue(actualResult);
     }

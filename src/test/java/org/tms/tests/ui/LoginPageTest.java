@@ -1,4 +1,4 @@
-package org.tms.tests;
+package org.tms.tests.ui;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -16,6 +16,6 @@ public class LoginPageTest extends BaseTest{
         String actualTitleOfQasePage = setLoginPageService.login(user)
                 .getProjectNamePage();
         String expectedTitleOfQasePage = "Projects";
-        Assert.assertEquals(actualTitleOfQasePage, expectedTitleOfQasePage, "Success Login");
+        Assert.assertEquals(actualTitleOfQasePage, expectedTitleOfQasePage, "Login failed");
     }
 }

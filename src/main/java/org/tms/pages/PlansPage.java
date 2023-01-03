@@ -5,7 +5,6 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 @Log4j2
 public class PlansPage extends BasePage{
@@ -40,9 +39,7 @@ public class PlansPage extends BasePage{
     @FindBy(xpath = "//div[contains(text(), 'The cases field is required.')]")
     private WebElement errorTextPlanCreation;
 
-    protected String planTitle = "newPlan";
-
-    WebDriverWait wait = new WebDriverWait(driver, 10);
+    private String planTitle = "newPlan";
 
     @Step("Open project")
     public PlansPage openProject(){

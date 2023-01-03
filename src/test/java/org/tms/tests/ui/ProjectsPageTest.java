@@ -1,4 +1,4 @@
-package org.tms.tests;
+package org.tms.tests.ui;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

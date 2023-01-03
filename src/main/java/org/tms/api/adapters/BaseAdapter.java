@@ -1,9 +1,9 @@
-package api.adapters;
+package org.tms.api.adapters;
 
 import com.google.gson.Gson;
 import io.restassured.response.Response;
 
-import static api.utils.StringConstant.*;
+import static org.tms.api.utils.StringConstant.*;
 import static io.restassured.RestAssured.given;
 
 

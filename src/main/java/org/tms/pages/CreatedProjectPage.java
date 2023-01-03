@@ -5,7 +5,6 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 @Log4j2
 public class CreatedProjectPage extends BasePage{
@@ -40,10 +39,8 @@ public class CreatedProjectPage extends BasePage{
     @FindBy(xpath = "//div[contains(text(), 'newCase')]")
     private WebElement titleNewCase;
 
-    WebDriverWait wait = new WebDriverWait(driver, 10);
-
-    protected String suiteName = "newSuite";
-    protected String caseName = "newCase";
+    private String suiteName = "newSuite";
+    private String caseName = "newCase";
 
     @Step("Get Created Project Page Name")
     public String getCreatedProjectNamePage(){

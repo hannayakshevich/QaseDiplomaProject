@@ -1,4 +1,4 @@
-package api.models;
+package org.tms.api.models;
 
 import lombok.Builder;
 import lombok.Data;
