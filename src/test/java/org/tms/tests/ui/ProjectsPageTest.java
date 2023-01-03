@@ -19,7 +19,7 @@ public class ProjectsPageTest extends BaseTest{
         String actualTitleCreatedProjectName = projectPageService.createNewProject()
                 .getCreatedProjectNamePage();
         String expectedTitleCreatedProjectName = "Project Name";
-        Assert.assertEquals(actualTitleCreatedProjectName, expectedTitleCreatedProjectName, "Project was created");
+        Assert.assertEquals(actualTitleCreatedProjectName, expectedTitleCreatedProjectName, "Project wasn't created");
     }
 
     @Test
@@ -45,7 +45,7 @@ public class ProjectsPageTest extends BaseTest{
         loginPageService.login(user);
         String actualFilterName = projectPageService.addFilter();
         String expectedFilterName = "Member";
-        Assert.assertEquals(actualFilterName, expectedFilterName, "Filter was added");
+        Assert.assertEquals(actualFilterName, expectedFilterName, "Filter wasn't added");
     }
 
 }
