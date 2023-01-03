@@ -36,7 +36,7 @@ public class ProjectsPageTest extends BaseTest{
     }
 
     @Test
-    public void AddFilterTest(){
+    public void addFilterTest(){
 
         ProjectPageService projectPageService = new ProjectPageService();
         LoginPageService loginPageService = new LoginPageService();

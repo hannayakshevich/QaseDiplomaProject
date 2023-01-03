@@ -8,7 +8,7 @@ import org.tms.services.LoginPageService;
 public class LoginPageTest extends BaseTest{
 
     @Test
-    public void LoginTest(){
+    public void loginTest(){
 
         LoginPageService setLoginPageService = new LoginPageService();
         User user = new User();
