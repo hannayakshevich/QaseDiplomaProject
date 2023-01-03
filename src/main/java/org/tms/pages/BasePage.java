@@ -7,11 +7,11 @@ import org.tms.driver.DriverSingleton;
 
 public class BasePage {
 
-    private static final int waitTime = 10;
+    private static final int WAIT_TIME = 10;
 
     protected WebDriver driver = DriverSingleton.getDriver();
 
-    WebDriverWait wait = new WebDriverWait(driver, waitTime);
+    WebDriverWait wait = new WebDriverWait(driver, WAIT_TIME);
 
     protected BasePage() {
         PageFactory.initElements(driver, this);
